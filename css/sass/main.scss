@@ -1,0 +1,135 @@
+//Import du fichier _variables.scss présent dans bootstrap-sass-official (renomé en _customVariables.scss), CF https://www.sitepoint.com/bootstrap-sass-installation-and-customisation/, SETUP :
+@import "_customVariables"; // Bootstrap
+// Import Boostrap-sass components : CF https://www.sitepoint.com/bootstrap-sass-installation-and-customisation/, SETUP :
+@import "./../../../librairiesFront/bootstrap-sass-official/assets/stylesheets/bootstrap";
+// CF http://stackoverflow.com/questions/18570424/using-fontawesome-with-sass
+@import "font-awesome.scss";
+
+// ---- Variables : ---- //
+// breakpoints :
+$breakpoint1: 350px;
+$breakpoint2: 480px;
+$breakpoint3: 700px;
+// Colors :
+$grisSombre: rgb(58, 60, 71);
+$background-color-body: rgb(66,66,115);
+$title-color: rgb(253,182,188);
+$background-button-color: rgb(162,45,160);
+// Typo :
+$typo-google-choisie: 'Bad Script', cursive;
+$font-size-body-breakpoint1: 1.3em;
+$font-size-body-breakpoint2: 1.8em;
+$font-size-body-breakpoint3: 2.3em;
+$font-size-body-breakpoint4: 2.5em;
+$font-size-h1: 2.2em;
+$font-size-h1-put-little: 0.5em;
+$font-size-h3: 1.7em;
+$font-size-button: 1em;
+$font-size-button-bigger: 1.5em;
+
+
+// "Var globales" :
+* {
+	font-family: $typo-google-choisie;
+}
+
+html, body { // To set height of the container to 100%, CF http://stackoverflow.com/questions/8473162/how-do-i-set-height-of-container-div-to-100-of-window-height AND https://css-tricks.com/almanac/properties/h/height/
+	height:100%;
+}
+
+body {
+	background-color: $background-color-body;
+}
+// ------------------------ //
+// For all viewports size :
+// ------------------------ //
+.containerAppli {
+	border: solid 1px rgb(100,100,100);
+	height: 100%;
+	.header {
+		text-align: center;
+		color: $title-color;
+		margin-bottom: 2.2em;
+		.h3 {
+			font-size: $font-size-h3;
+			letter-spacing: 0.18em;
+		}
+		.h1 {
+			font-size: $font-size-h1;
+			letter-spacing: 0.05em;
+			.emphasis {
+				font-weight: bold;
+			}
+			.put-little {
+				font-size: $font-size-h1-put-little;
+			}
+		}
+
+	}
+	.section {
+		text-align: center;
+		.button-container {
+			margin-bottom: 2em;
+			.btn {
+				background-color: $background-button-color;
+				color: white;
+				border: solid 1px white;
+				border-radius: 7px;
+				letter-spacing: 0.3em;
+				font-size: $font-size-button;
+				.put-bigger {
+					font-size: $font-size-button-bigger;
+				}
+			}
+		}
+	}
+}
+
+// ------------------------ //
+// For mobiles :
+// ------------------------ //
+@media screen and (max-width: $breakpoint1) {
+	body {
+		font-size: $font-size-body-breakpoint1;
+		.containerAppli {
+			width: 100%;
+		}
+	}
+}
+// ------------------------ //
+// For mobiles-tablets :
+// ------------------------ //
+@media screen and (min-width: $breakpoint1+1) and (max-width: $breakpoint2) {
+	body {
+		font-size: $font-size-body-breakpoint2;
+	}
+}
+// ------------------------ //
+// For tablets-desktop :
+// ------------------------ //
+@media screen and (min-width: $breakpoint2+1) and (max-width: $breakpoint3) {
+	body {
+		font-size: $font-size-body-breakpoint3;
+	}
+}
+// ------------------------ //
+// For desktop :
+// ------------------------ //
+@media screen and (min-width: $breakpoint3+1) {
+	body {
+		font-size: $font-size-body-breakpoint4;
+		background-color: white;
+		.containerAppli {
+			background-color: $background-color-body;
+			width: 550px;
+			margin-left: auto;
+			margin-right: auto;
+			// Pour centrer verticalement sans flex, CF https://davidwalsh.name/css-vertical-center, bien expliqué.
+			height: 500px;
+			position: relative;
+			top: 50%;
+			transform: translateY(-50%);
+
+		}
+	}
+}
