@@ -1,0 +1,90 @@
+@import "main.scss";
+
+html, body {
+	height: 100%;
+}
+
+img, embed, object, video {// Pour éviter que dépasse.
+	max-width: 100%;
+}
+
+.turn-initial-page {
+	position: relative;
+	font-size: 16px;
+	text-align: right;
+	margin-right: 0.8em;
+	padding-top: 0.5em;
+	cursor: pointer;
+	&:hover {
+		color: $background-color-body;
+		font-size: 0.7em;
+	}
+}
+
+.container {
+	margin-top: 10px;
+	#slides {
+		display:none;
+		text-align: center;
+		.slidesjs-navigation {
+			padding-right: 5px;
+		}
+	}
+}
+
+// First break point :
+@media screen and (max-width: 499px) {
+	body {
+		background-color: $background-color-body;
+		.container {
+			#slides {
+				border: solid 1px white;
+				.slidesjs-navigation {
+					color: white;
+					size: 0.8em;
+				}
+			}
+		}
+	}
+}
+
+// Second break point :
+@media screen and (min-width: 500px) and (max-width: 949px) {
+	body {
+		background-color: white;
+		.container {
+			#slides {
+				border: solid 1px $grisSombre;
+				.slidesjs-container {
+					margin-left: auto;
+					margin-right: auto;
+				}
+				.slidesjs-navigation {
+					color: $grisSombre;
+					size: 0.8em;
+				}
+			}
+		}
+	}
+}
+
+// Third break point :
+@media screen and (min-width: 950px){
+	body {
+		background-color: white;
+		.container {
+			//top: 50%;
+			#slides {
+				border: solid 1px $grisSombre;
+				.slidesjs-container {
+					margin-left: auto;
+					margin-right: auto;
+				}
+				.slidesjs-navigation {
+					color: $grisSombre;
+					size: 0.8em;
+				}
+			}
+		}
+	}
+}

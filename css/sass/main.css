@@ -10340,44 +10340,48 @@ button.close {
 * {
   font-family: "Bad Script", cursive; }
 
-/* line 36, C:/wamp/www/cumpleMariana/css/sass/main.scss */
+/* line 35, C:/wamp/www/cumpleMariana/css/sass/main.scss */
+img, embed, object, video {
+  max-width: 100%; }
+
+/* line 39, C:/wamp/www/cumpleMariana/css/sass/main.scss */
 html, body {
   height: 100%; }
 
-/* line 40, C:/wamp/www/cumpleMariana/css/sass/main.scss */
+/* line 43, C:/wamp/www/cumpleMariana/css/sass/main.scss */
 body {
   background-color: #424273; }
 
-/* line 46, C:/wamp/www/cumpleMariana/css/sass/main.scss */
+/* line 49, C:/wamp/www/cumpleMariana/css/sass/main.scss */
 .containerAppli {
   border: solid 1px #646464;
   height: 100%; }
-  /* line 49, C:/wamp/www/cumpleMariana/css/sass/main.scss */
+  /* line 52, C:/wamp/www/cumpleMariana/css/sass/main.scss */
   .containerAppli .header {
     text-align: center;
     color: #fdb6bc;
     margin-bottom: 2.2em; }
-    /* line 53, C:/wamp/www/cumpleMariana/css/sass/main.scss */
+    /* line 56, C:/wamp/www/cumpleMariana/css/sass/main.scss */
     .containerAppli .header .h3 {
       font-size: 1.7em;
       letter-spacing: 0.18em; }
-    /* line 57, C:/wamp/www/cumpleMariana/css/sass/main.scss */
+    /* line 60, C:/wamp/www/cumpleMariana/css/sass/main.scss */
     .containerAppli .header .h1 {
       font-size: 2.2em;
       letter-spacing: 0.05em; }
-      /* line 60, C:/wamp/www/cumpleMariana/css/sass/main.scss */
+      /* line 63, C:/wamp/www/cumpleMariana/css/sass/main.scss */
       .containerAppli .header .h1 .emphasis {
         font-weight: bold; }
-      /* line 63, C:/wamp/www/cumpleMariana/css/sass/main.scss */
+      /* line 66, C:/wamp/www/cumpleMariana/css/sass/main.scss */
       .containerAppli .header .h1 .put-little {
         font-size: 0.5em; }
-  /* line 69, C:/wamp/www/cumpleMariana/css/sass/main.scss */
+  /* line 72, C:/wamp/www/cumpleMariana/css/sass/main.scss */
   .containerAppli .section {
     text-align: center; }
-    /* line 71, C:/wamp/www/cumpleMariana/css/sass/main.scss */
+    /* line 74, C:/wamp/www/cumpleMariana/css/sass/main.scss */
     .containerAppli .section .button-container {
       margin-bottom: 2em; }
-      /* line 73, C:/wamp/www/cumpleMariana/css/sass/main.scss */
+      /* line 76, C:/wamp/www/cumpleMariana/css/sass/main.scss */
       .containerAppli .section .button-container .btn {
         background-color: #a22da0;
         color: white;
@@ -10385,34 +10389,34 @@ body {
         border-radius: 7px;
         letter-spacing: 0.3em;
         font-size: 1em; }
-        /* line 80, C:/wamp/www/cumpleMariana/css/sass/main.scss */
+        /* line 83, C:/wamp/www/cumpleMariana/css/sass/main.scss */
         .containerAppli .section .button-container .btn .put-bigger {
           font-size: 1.5em; }
 
 @media screen and (max-width: 350px) {
-  /* line 92, C:/wamp/www/cumpleMariana/css/sass/main.scss */
+  /* line 96, C:/wamp/www/cumpleMariana/css/sass/main.scss */
   body {
     font-size: 1.3em; }
-    /* line 94, C:/wamp/www/cumpleMariana/css/sass/main.scss */
+    /* line 98, C:/wamp/www/cumpleMariana/css/sass/main.scss */
     body .containerAppli {
       width: 100%; } }
 
 @media screen and (min-width: 351px) and (max-width: 480px) {
-  /* line 103, C:/wamp/www/cumpleMariana/css/sass/main.scss */
+  /* line 107, C:/wamp/www/cumpleMariana/css/sass/main.scss */
   body {
     font-size: 1.8em; } }
 
 @media screen and (min-width: 481px) and (max-width: 700px) {
-  /* line 111, C:/wamp/www/cumpleMariana/css/sass/main.scss */
+  /* line 115, C:/wamp/www/cumpleMariana/css/sass/main.scss */
   body {
     font-size: 2.3em; } }
 
 @media screen and (min-width: 701px) {
-  /* line 119, C:/wamp/www/cumpleMariana/css/sass/main.scss */
+  /* line 123, C:/wamp/www/cumpleMariana/css/sass/main.scss */
   body {
     font-size: 2.5em;
     background-color: white; }
-    /* line 122, C:/wamp/www/cumpleMariana/css/sass/main.scss */
+    /* line 126, C:/wamp/www/cumpleMariana/css/sass/main.scss */
     body .containerAppli {
       background-color: #424273;
       width: 550px;
