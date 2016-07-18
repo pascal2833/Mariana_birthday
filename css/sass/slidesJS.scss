@@ -1,57 +1,120 @@
 @import "main.scss";
 
+// ---- Variables : ---- //
+// breakpoints :
+$breakpoint1_slides: 480px;// End of mobiles --> Au delà, on commence à ne pa smettre width image à 100% pour ne pas que hauteur dépasse.
+$breakpoint2_slides: 600px;
+$breakpoint3_slides: 800px;
+$breakpoint_4_landscape: 668px;// for iphione6 little
+
+* {
+	font-family: $typo-google-choisie;
+}
+
 html, body {
-	height: 100%;
+	height: 100%;// Pour permettre d'affecter des hauteurs/élémets relatives à ça.
 }
 
 img, embed, object, video {// Pour éviter que dépasse.
 	max-width: 100%;
 }
 
+.photosFamilly {
+	visibility: hidden;
+	display: none;
+}
+
 .turn-initial-page {
 	position: relative;
-	font-size: 16px;
+	font-size: 18px;
 	text-align: right;
 	margin-right: 0.8em;
-	padding-top: 0.5em;
 	cursor: pointer;
-	&:hover {
-		color: $background-color-body;
-		font-size: 0.7em;
-	}
 }
 
 .container {
-	margin-top: 10px;
+	margin-bottom: 5px!important;
 	#slides {
 		display:none;
 		text-align: center;
 		.slidesjs-navigation {
-			padding-right: 5px;
+			font-size: 18px;
+			padding-right: 10px;
 		}
 	}
 }
 
 // First break point :
-@media screen and (max-width: 499px) {
+@media screen and (orientation: landscape) and (max-width: $breakpoint_4_landscape) {
 	body {
-		background-color: $background-color-body;
+		background-color: $background-color-body!important;
+		.turn-initial-page {
+			color: white!important;
+		}
 		.container {
+			margin-top: 2px!important;
 			#slides {
-				border: solid 1px white;
+				border: solid 1px white!important;
+				padding-left: 15%;
 				.slidesjs-navigation {
-					color: white;
-					size: 0.8em;
+					color: white!important;
+					position: absolute;
+					top: 1%;
+					left: 2%;
+				}
+				.slidesjs-next {
+					left: 76px;
+				}
+				.slidesjs-container {
+					border: none!important;
+					margin-bottom: 0px!important;
+					.slidesjs-control {
+						display: block;
+						img {
+							width: 85%!important;
+						}
+					}
 				}
 			}
 		}
 	}
 }
 
-// Second break point :
-@media screen and (min-width: 500px) and (max-width: 949px) {
+@media screen and (max-width: $breakpoint1_slides) {
+	body {
+		background-color: $background-color-body;
+		.turn-initial-page {
+			color: white;
+		}
+		.container {
+			#slides {
+				border: solid 1px white;
+				.slidesjs-navigation {
+					color: white;
+				}
+				.slidesjs-container {
+					border-bottom: solid 1px white;
+					margin-bottom: 4px;
+					.slidesjs-control {
+						.foto {
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media screen and (min-width: $breakpoint1_slides+1) and (max-width: $breakpoint2_slides) {
 	body {
 		background-color: white;
+		.turn-initial-page {
+			color: $grisSombre;
+			&:hover {
+				color: $background-color-body;
+				font-weight: bold;
+			}
+		}
 		.container {
 			#slides {
 				border: solid 1px $grisSombre;
@@ -61,7 +124,9 @@ img, embed, object, video {// Pour éviter que dépasse.
 				}
 				.slidesjs-navigation {
 					color: $grisSombre;
-					size: 0.8em;
+					&:hover {
+						font-weight: bold;
+					}
 				}
 			}
 		}
@@ -69,11 +134,17 @@ img, embed, object, video {// Pour éviter que dépasse.
 }
 
 // Third break point :
-@media screen and (min-width: 950px){
+@media screen and (min-width: $breakpoint2_slides+1){
 	body {
 		background-color: white;
+		.turn-initial-page {
+			color: $grisSombre;
+			&:hover {
+				color: $background-color-body;
+				font-weight: bold;
+			}
+		}
 		.container {
-			//top: 50%;
 			#slides {
 				border: solid 1px $grisSombre;
 				.slidesjs-container {
@@ -83,6 +154,9 @@ img, embed, object, video {// Pour éviter que dépasse.
 				.slidesjs-navigation {
 					color: $grisSombre;
 					size: 0.8em;
+					&:hover {
+						font-weight: bold;
+					}
 				}
 			}
 		}
