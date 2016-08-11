@@ -40,9 +40,6 @@ html, body { // To set height of the container to 100%, CF http://stackoverflow.
 	height:100%;
 }
 
-body {
-	background-color: $background-color-body;
-}
 // ------------------------ //
 // For all viewports size :
 // ------------------------ //
@@ -133,7 +130,6 @@ body {
 			position: relative;
 			top: 50%;
 			transform: translateY(-50%);
-
 		}
 	}
 }

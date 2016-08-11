@@ -8,7 +8,8 @@
 
 module.exports = function (grunt) {
 	grunt.initConfig({
-		responsive_images: {
+		pkg: grunt.file.readJSON('package.json'),
+		/*responsive_images: {
 			dev: {
 				options: {
 					//engine: 'im', // Ne rien mettre pour windows (par defaut prend gm, graphic magic)
@@ -23,39 +24,60 @@ module.exports = function (grunt) {
 						quality: 60
 					}]
 				},
-				/*files: [{
+				files: [{
 					expand: true,
 					src: ['*.{gif,jpg,png}'],
 					cwd: 'img/',
 					dest: 'image'
-				}]*/
+				}]
+			}
+		},*/
+		/*pagespeed: {
+			options: {
+				nokey: true,
+				url: "https://pascal-evano.org/fotos_Mariana/autresPages/los-pollitos.html"
+			},
+			prod: {
+				options: {
+					//url: "https://developers.google.com/speed/docs/insights/v1/getting_started",
+					locale: "en_GB",
+					strategy: "desktop",
+					threshold: 80
+				}
+			}
+		},*/
+		sass: {
+			dist: {
+				options: {
+					//trace: true,
+					//check: true,
+					quiet: true,
+					style: 'compressed'
+				},
 				files: {
-					'img/familia14.jpg': 'img/familia14.jpg',
-					'img/familia15.jpg': 'img/familia15.jpg',
-					'img/familia16.jpg': 'img/familia16.jpg',
-					'img/nous1.jpg': 'img/nous1.jpg',
-					'img/nous14.jpg': 'img/nous14.jpg',
-					'img/nous15.jpg': 'img/nous15.jpg',
-					'img/nous16.jpg': 'img/nous16.jpg',
-					'img/nous17.jpg': 'img/nous17.jpg',
-					'img/nous18.jpg': 'img/nous18.jpg',
-					'img/nous19.jpg': 'img/nous19.jpg',
-					'img/nous22.jpg': 'img/nous22.jpg',
-					'img/pollitos20.jpg': 'img/pollitos20.jpg',
-					'img/pollitos25.jpg': 'img/pollitos25.jpg',
-					'img/pollitos27.jpg': 'img/pollitos27.jpg',
-					'img/pollitos29.jpg': 'img/pollitos29.jpg',
-					'img/pollitos31.jpg': 'img/pollitos31.jpg',
-					'img/pollitos32.jpg': 'img/pollitos32.jpg',
-					'img/pollitos33.jpg': 'img/pollitos33.jpg',
-					'img/pollitos34.jpg': 'img/pollitos34.jpg',
-					'img/pollitos35.jpg': 'img/pollitos35.jpg'
+					'css/sass/main.css': 'css/sass/main.scss',
+					'css/sass/slidesJS.css': 'css/sass/slidesJS.scss'
 				}
 			}
 		},
+		watch: {
+			css: {
+				files: ['css/sass/*.scss'],
+				tasks: ['sass'],
+				options: {
+					spawn: false
+				}
+			}
+		}
 	});
 
-	grunt.loadNpmTasks('grunt-responsive-images');
-	grunt.registerTask('default', ['responsive_images']);
+	//grunt.loadNpmTasks('grunt-responsive-images');
+	//grunt.loadNpmTasks('grunt-pagespeed');
+	grunt.loadNpmTasks('grunt-contrib-sass');
+	grunt.loadNpmTasks('grunt-contrib-watch');
+	//grunt.loadNpmTasks('grunt-contrib-compass');
+	grunt.registerTask('default', ['sass','watch']);
+	/*grunt.registerTask('default', ['responsive_images']);*/
+	//grunt.registerTask('default', ['grunt-pagespeed']);
 
 };
